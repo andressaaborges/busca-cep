@@ -24,7 +24,7 @@ function Cep() {
         setCep(e.target.value)
     }
 
-    function writeForm() {
+    const writeForm = () => {
         return (
             <form onSubmit={handleSubmit} className="form">
                 <label>
@@ -36,7 +36,7 @@ function Cep() {
         )
     }
 
-    function writeDataCep() {
+    const writeDataCep = () => {
         return (
             <>
                 <Paragraph info={'Bairro'} value={cep.bairro} />
