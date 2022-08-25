@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import './index.css'
 
 function Cep() {
     const [cep, setCep] = useState([])
@@ -24,10 +25,10 @@ function Cep() {
 
     function writeForm() {
         return (
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="form">
                 <label>
                     CEP:
-                    <input type='text' value={cep.value} onChange={handleChange}></input>
+                    <input type='text' value={cep.cep} onChange={handleChange}></input>
                 </label>
                 <button type='submit'>Pesquisar CEP</button>
             </form>
@@ -36,6 +37,7 @@ function Cep() {
 
     return (
         <>
+            <h1>Busca CEP</h1>
             {writeForm()}
             <h2>Dados do CEP: </h2>
             <p>Bairro: <strong>{cep.bairro}</strong></p>
