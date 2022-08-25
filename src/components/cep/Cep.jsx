@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Paragraph from '../paragraph/Paragraph'
 import './index.css'
 
 function Cep() {
@@ -35,16 +36,24 @@ function Cep() {
         )
     }
 
+    function writeDataCep() {
+        return (
+            <>
+                <Paragraph info={'Bairro'} value={cep.bairro} />
+                <Paragraph info={'Complemento'} value={cep.complemento} />
+                <Paragraph info={'DDD'} value={cep.ddd} />
+                <Paragraph info={'Cidade'} value={cep.localidade} />
+                <Paragraph info={'Rua'} value={cep.logradouro} />
+            </>
+        )
+    }
+
     return (
         <>
             <h1>Busca CEP</h1>
             {writeForm()}
             <h2>Dados do CEP: </h2>
-            <p>Bairro: <strong>{cep.bairro}</strong></p>
-            <p>Complemento: <strong>{cep.complemento}</strong></p>
-            <p>DDD: <strong>{cep.ddd}</strong></p>
-            <p>Cidade: <strong>{cep.localidade}</strong></p>
-            <p>Rua: <strong>{cep.logradouro}</strong></p>
+            {writeDataCep()}
         </>
     )
 }
